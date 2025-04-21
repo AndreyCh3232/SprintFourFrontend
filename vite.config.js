@@ -5,11 +5,11 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
 	base: '/SprintFourFrontend/',
 	plugins: [react()],
-	build: {
-		outDir: '../backend/public',
-		emptyOutDir: true,
-	},
-	css: {
-		devSourcemap: true
-	}
+	// build: {
+	// 	outDir: '../backend/public',
+	// 	emptyOutDir: true,
+	// },
+	// css: {
+	// 	devSourcemap: true
+	// }
 })
