@@ -1,0 +1,80 @@
+/* Backdrop container with black background and opacity */
+.backdrop-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with 50% opacity */
+    z-index: 10;
+    /* Ensure it's behind the modal block */
+    transition: opacity 0.3s ease-in-out;
+    /* Add smooth fade-out transition */
+}
+
+.backdrop-container.closing {
+    opacity: 0;
+    /* Fade out animation */
+}
+
+/* Modal block styles */
+.block {
+    z-index: 1000;
+    /* Ensure it's above the backdrop */
+    opacity: 1;
+    // transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    /* Smooth opening/closing animation */
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    border-radius: 32px;
+    // width: 850px;
+    // height: 511px;
+    background-color: white;
+    position: absolute;
+    top: 64px;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.block:has(.date-picker) {
+    /* display: grid; */
+
+    max-height: 65dvh;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.block:has(.suggested-locations-container) {
+    // width: 428px;
+    // height: 500px;
+
+    left: 0;
+}
+
+.block:has(.guest-selector) {
+    // width: 408px;
+    width: auto;
+    height: auto;
+    padding-inline: 32px;
+    padding-block: 16px;
+    right: 0;
+
+
+}
+
+.block.closing {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+    /* Shrink and fade out animation */
+}

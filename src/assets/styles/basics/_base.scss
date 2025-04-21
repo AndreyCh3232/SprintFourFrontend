@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+    line-break: strict;
+    font-family: 'Airbnb Cereal VF', 'AirbnbCereal-med', -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    color: $main-writing-color;
+    background-color: $main-bg-color;
+    margin: 0;
+    font-synthesis: none;
+    height: 100%;
+
+    height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.6em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500 !important;
+}
+
+strong {
+    font-weight: 500;
+}
+
+button {
+    background: none;
+    color: $main-writing-color;
+    border: none;
+    padding: 0;
+    font: inherit;
+    outline: inherit;
+}
+
+.logo {
+    display: flex;
+    font-weight: 500;
+    font-family: 'Airbnb Cereal VF', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+
+    h1 {
+        color: #ff385c;
+        font-size: 22px;
+        margin: 0;
+        margin-left: 4px;
+    }
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+input {
+    max-width: 100%;
+}
+
+.redirect{
+    margin-top: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 32px;
+}

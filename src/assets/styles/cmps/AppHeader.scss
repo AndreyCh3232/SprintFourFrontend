@@ -1,0 +1,314 @@
+// .app-header
+.app-header {
+    box-sizing: border-box;
+    min-height: 80px;
+    border-bottom: 1px solid lightgrey;
+    // display: flex;
+    // align-items: center;
+    background-color: white;
+    z-index: 1000;
+
+    // .in-stay-details {
+    //     // margin-inline: 380px;
+    // }
+
+    nav {
+        display: flex;
+        // align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        position: relative;
+
+        // margin-inline: 40px;
+        margin-top: 16px;
+        transition: height 0.9s ease-out;
+
+        .header-user-section {
+            display: flex;
+            height: max-content;
+            align-items: center;
+            gap: 3em;
+
+            button {
+                cursor: pointer;
+            }
+
+            p {
+                color: rgb(34, 34, 34);
+                display: flex;
+                font-weight: 500;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                height: max-content;
+            }
+        }
+
+        //logo
+        .logo {
+            display: flex;
+            justify-content: center;
+            font-weight: 500;
+            font-family: 'Airbnb Cereal VF', sans-serif;
+            text-decoration: none;
+            cursor: pointer;
+            padding-block-start: 7px;
+
+            h1 {
+                color: #ff385c;
+                font-size: 22px;
+                margin: 0;
+                margin-left: 4px;
+            }
+        }
+
+        .filter-container {
+            border: 1px solid #DDDD;
+            box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+            border-radius: 32px;
+
+            // position: absolute;
+            // left: 50%;
+            // transform: translateX(-50%);
+            // bottom: 15px;
+
+            height: 66px;
+            width: 850px;
+            outline: none;
+            display: flex;
+            align-items: center;
+
+            transition: 0.3s ease;
+
+            &.expanded {
+                margin-block-start: 64px;
+                // position: relative;
+                width: min(100%, 850px);
+
+                position: absolute;
+                left: 50%;
+                translate: -50%;
+            }
+
+            *:not(input) {
+                cursor: pointer;
+            }
+
+            .filter-action-container {
+                font-size: 12px;
+                padding-left: 20px;
+                margin: 0;
+                height: 100%;
+                position: relative;
+                /* For the pseudo-element */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                input {
+                    font-size: 14px;
+                    width: max-content;
+                    font-weight: 500;
+                    color: rgb(106, 106, 106);
+                    cursor: pointer;
+                }
+            }
+
+            .filter-container {
+                &:not(.not-expanded):hover {
+                    background-color: #F5F5F5; // Very light grey for hover
+                    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+                }
+            }
+
+            .filter-action-container:not(.who)::after {
+                content: "";
+                position: absolute;
+                top: 15%;
+                /* Adjust this value for how far down you want the border to start */
+                bottom: 15%;
+                /* Adjust this value for how far up you want the border to end */
+                top: 15%;
+                /* Adjust this value for how far down you want the border to start */
+                bottom: 15%;
+                /* Adjust this value for how far up you want the border to end */
+                right: 0;
+                width: 1px;
+                /* Border thickness */
+                background-color: #F5F5F5;
+                /* Same as the border color */
+            }
+
+            .filter-label {
+                font-weight: 500;
+                font-size: 12px;
+            }
+
+            .filter-action {
+                border: none;
+                outline: none;
+                background: none;
+                box-shadow: none;
+                padding: 0;
+                margin-right: 4px;
+                width: max-content;
+                height: auto;
+                font: inherit;
+                color: lightgrey;
+            }
+
+
+            .filter-action:focus {
+                outline: none;
+                color: none;
+                border: none;
+                background-color: none;
+                box-shadow: none;
+            }
+
+            .filter-search {
+                border-radius: 50%;
+                background-color: #ff385c;
+                right: 10px;
+                stroke: white;
+                width: 40px;
+                height: 40px;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+            }
+
+            .short {
+                padding-right: 20px;
+
+                >* {
+                    font-size: 14px;
+                    width: 48px;
+                }
+
+                .short:hover {
+                    background-color: red;
+                }
+
+                .filter-label {
+                    width: max-content;
+                }
+
+                .add-guests {
+                    font-weight: unset;
+                    color: #707070;
+                    font-size: 14px;
+                    line-break: strict;
+
+                }
+            }
+
+            .anywhere {
+                padding-left: 0px;
+            }
+
+        }
+
+        .filter-container:hover {
+            box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .not-expanded {
+            position: absolute;
+            left: 50%;
+            translate: -50%;
+            width: max-content;
+            padding-left: 20px;
+            height: 48px;
+        }
+
+        //user-controls
+        .user-controls {
+            background-color: inherit;
+            width: 86px;
+            margin: 0;
+            height: 48px;
+            border-radius: 30px;
+            border: 1px solid rgb(221, 221, 221);
+            padding: 8px 8px 8px 14px;
+        }
+
+        .user-controls:hover {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .user-controls .controls-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-controls-actions {
+            color: rgb(106, 106, 106);
+        }
+
+        .user-controls-profile {
+            color: rgb(106, 106, 106);
+            margin-inline-start: 14px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .add {
+            background-color: white;
+            font-family: 'Airbnb Cereal VF', sans-serif;
+            font-size: 0.875rem;
+            color: #222222;
+            font-weight: 500;
+            line-height: 1.125rem;
+            height: 42px;
+            border-radius: 22px;
+            border: none;
+            padding: 12px;
+
+            &:hover {
+                background-color: #f7f7f7;
+            }
+
+        }
+
+        .auth-menu {
+            position: absolute;
+            top: 50px;
+            right: -1px;
+            background-color: white;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+            box-shadow: 0 2px 16px #0000001f;
+            width: 240px;
+            z-index: 1;
+
+            display: flex;
+            flex-direction: column;
+
+            .login-action {
+                font-weight: 500;
+            }
+
+            .auth-menu-item {
+                cursor: pointer;
+                padding: 8px 16px 8px 16px;
+            }
+
+            .auth-menu-item:hover {
+                background-color: #F6F6F6;
+            }
+        }
+    }
+
+    nav.expand {
+        // height: 168px;
+        align-items: unset;
+        // margin-block-end: 23px;
+        height: 150px;
+    }
+}

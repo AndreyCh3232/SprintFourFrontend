@@ -1,0 +1,26 @@
+.stay-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(239px, 1fr));
+    gap: 24px;
+
+    li {
+        list-style: none;
+        cursor: pointer;
+
+    }
+}
+
+section.no-matches {
+
+    h1 {
+        margin-block: rem(24px) rem(12px);
+        font-weight: 500;
+        font-size: 1.375rem;
+        line-height: 1.625rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}

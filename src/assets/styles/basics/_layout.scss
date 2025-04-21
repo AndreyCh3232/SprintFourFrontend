@@ -1,0 +1,47 @@
+.main-container {
+    // margin-inline: 40px;
+    display: grid;
+    grid-template-columns: minmax(80px, 1fr) minmax(auto, 2560px) minmax(80px, 1fr);
+
+    // margin-inline: 40px;
+    &.stay {
+        grid-template-columns: minmax(80px, 1fr) minmax(auto, 1120px) minmax(80px, 1fr);
+    }
+
+    &.add-stay {
+        grid-template-columns: minmax(auto, 48px) 1fr minmax(auto, 48px);
+    }
+
+    >* {
+        grid-column: 2;
+
+        &.full {
+            grid-column: 1 / -1;
+        }
+    }
+
+    // @include for-narrow-layout {
+    //     grid-template-columns: 
+    //         minmax(20px, 1fr)
+    //         minmax(auto, $mobile-breakpoint)
+    //         minmax(20px, 1fr);
+    // }
+    // @include for-normal-layout {
+    //     grid-template-columns: 
+    //         minmax(20px, 1fr)
+    //         minmax(auto, $narrow-breakpoint)
+    //         minmax(20px, 1fr);
+    // }
+    // @include for-wide-layout {
+    //     grid-template-columns: 
+    //         minmax(20px, 1fr)
+    //         minmax(auto, $normal-breakpoint)
+    //         minmax(20px, 1fr);
+    // }
+}
+
+.stayd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}

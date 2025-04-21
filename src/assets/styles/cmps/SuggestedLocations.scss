@@ -1,0 +1,88 @@
+.suggested-locations-container {
+    // width: 428px;
+    // height: 500px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    padding-inline-start: 20px;
+    padding-block: 20px;
+    border-radius: 32px;
+
+    h1 {
+        font-size: rem(12px);
+        font-weight: 400;
+        color: rgb(34, 34, 34);
+    }
+
+    .location-icon {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .locations-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .location {
+        // height: 56px;
+        width: 377px;
+        display: flex;
+        gap: 10px;
+        // padding: 8px;
+        align-items: center;
+        cursor: pointer;
+
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            /* Stack name and description vertically */
+            // justify-content: center; /* Vertically center content if needed */
+
+            >* {
+                margin: 0;
+            }
+        }
+
+        .location-name {
+            font-weight: 500;
+        }
+
+        .location-description {
+            font-weight: 500;
+            margin-top: 4px;
+            color: rgb(106, 106, 106);
+            font-weight: 400;
+        }
+    }
+
+    .location:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        /* Light gray hover effect */
+        border-radius: 10px;
+    }
+}
+
+.locations-list-container {
+    padding-inline-end: 20px;
+    max-height: 59dvh;
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+
+
+.locations-list-container::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+    // border-radius: 50px;
+}
+
+.locations-list-container::-webkit-scrollbar-thumb {
+    background: #8e8e8e;
+    border-radius: 50px;
+    // height: 4px;
+}

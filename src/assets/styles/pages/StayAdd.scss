@@ -1,0 +1,594 @@
+$primary-color: rgb(34, 34, 34);
+$border-color: lightgray;
+$hover-border-color: black;
+$hover-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+$selected-bg: rgba(0, 0, 0, 0.05);
+
+.add-flow {
+    // display: flex;
+    // flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Airbnb Cereal VF', 'AirbnbCereal-med', -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
+
+    .progress-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 6px;
+        position: relative;
+    }
+
+    .progress-step {
+        height: 6px;
+        flex-grow: 1;
+        background-color: #ddd;
+        transition: background-color 0.3s ease;
+        margin: 0 5px;
+    }
+
+    .progress-step.active {
+        background-color: black;
+    }
+
+    .back-btn,
+    .next-btn {
+        margin-top: 10px;
+    }
+}
+
+
+.add-header {
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: 32px;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+
+    .logo {
+        filter: brightness(0) saturate(100%) invert(12%) sepia(7%) saturate(5%) hue-rotate(325deg) brightness(98%) contrast(96%);
+    }
+
+    // .exit button {
+    //     background: none;
+    //     outline: none;
+    //     border-radius: 24px;
+    //     padding: 10px;
+    //     font-size: 14px;
+    //     color: rgb(34, 34, 34);
+    //     font-weight: 500;
+    //     padding-inline: 15px;
+    //     border: 1px solid lightgray;
+    //     cursor: pointer;
+    // }
+
+    .exit button {
+        background: none;
+        border-radius: 24px;
+        color: rgb(34, 34, 34);
+
+        border: 1px solid lightgray;
+        cursor: pointer;
+        width: 108px;
+        height: 40px;
+        font-family: 'Airbnb Cereal VF', 'AirbnbCereal-med', -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
+        font-size: 0.875rem !important;
+        line-height: 1.125rem !important;
+        font-weight: 500 !important;
+
+        &:hover {
+            border-color: $main-writing-color;
+        }
+    }
+}
+
+.main-content {
+    flex: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    min-height: inherit;
+}
+
+.main-content.initial {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transform: translateX(0);
+
+    .desc-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .desc {
+        width: 100%;
+        grid-column: 1;
+        font-size: 56px;
+        font-weight: 500;
+        line-height: 64px;
+        max-width: 514px;
+        outline-color: rgb(34, 34, 34);
+        margin: 0;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+
+        .item {
+            display: flex;
+            align-items: center;
+
+            h1 {
+                margin-bottom: 8px;
+                font-size: 22px;
+                color: rgb(34, 34, 34);
+                font-weight: 500;
+
+                span {
+                    padding-right: 16px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                color: rgb(106, 106, 106);
+                font-weight: 400;
+                line-height: 24px;
+                max-width: 448px;
+            }
+
+            img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+}
+
+.labels-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+    .desc-container {
+        .desc {
+            font-size: 24px;
+            font-weight: 600;
+            color: $primary-color;
+        }
+    }
+
+    .labels-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 600px;
+
+        .label-item {
+            width: 180px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $border-color;
+            border-radius: 8px;
+            padding: 18px;
+            cursor: pointer;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+
+            i {
+                font-size: 28px;
+                margin-bottom: 8px;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 500;
+                color: $primary-color;
+            }
+
+            &:hover {
+                border: 1px solid $hover-border-color;
+                box-shadow: $hover-shadow;
+            }
+
+            &.selected {
+                border: 1px solid $hover-border-color;
+                background-color: $selected-bg;
+            }
+        }
+    }
+
+    .label-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.guests-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .desc-container {
+        margin-bottom: 32px;
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 18px;
+            color: rgb(106, 106, 106);
+        }
+    }
+
+}
+
+.amenities-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .desc-container {
+        margin-bottom: 32px;
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 18px;
+            color: rgb(106, 106, 106);
+        }
+    }
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 200px));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.amenity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 16px;
+    gap: 5px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    // transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 100%;
+    min-height: 80px;
+    background-color: white;
+}
+
+.amenity-item:hover {
+    border: 1px solid black
+}
+
+.amenity-item.selected {
+    border: 1px solid black;
+    background-color: $selected-bg;
+}
+
+.amenity-item .icon {
+    font-size: 24px;
+    color: #222222;
+    margin-bottom: 4px;
+}
+
+.amenity-item span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.photos-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .desc-container {
+        margin-bottom: 32px;
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 18px;
+            color: rgb(106, 106, 106);
+        }
+    }
+
+    .photo-upload-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+
+        width: 45%;
+        height: 500px;
+    }
+
+    .uploaded-images {
+        position: absolute;
+        top: 10px;
+        display: flex;
+        gap: 5px;
+        padding: 10px;
+
+        .uploaded-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+        }
+    }
+
+    .photo-upload-box {
+        width: 100%;
+        height: 100%;
+        border: 2px dashed #ccc;
+        border-radius: 12px;
+        background-color: #f8f8f8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+
+        img {
+            width: 182px;
+            height: 182px;
+        }
+    }
+
+    .camera-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 16px;
+    }
+
+    .upload-btn {
+        padding: 10px 16px;
+        border: 1px solid black;
+        background: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    .upload-btn:hover {
+        background: #f0f0f0;
+    }
+}
+
+.main-content.pricing {
+    display: flex;
+    justify-content: center;
+}
+
+.pricing-view {
+
+    .desc-container {
+        margin-bottom: 100px;
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 18px;
+            color: rgb(106, 106, 106);
+        }
+    }
+
+    .price-input-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .price-input-container label {
+        font-weight: 500;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .price-input-container input {
+        padding: 10px;
+        width: 100%;
+        max-width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .warning-text {
+        color: #e63946;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .next-btn[disabled] {
+        background-color: #ccc;
+        cursor: not-allowed;
+        color: #666;
+    }
+}
+
+
+// .location-view {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+
+//     .desc-container {
+//         h2 {
+//             font-size: 32px;
+//             margin-bottom: 8px;
+//         }
+
+//         p {
+//             font-size: 18px;
+//             color: rgb(106, 106, 106);
+//         }
+//     }
+
+//     .location-form {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         flex-direction: column;
+//         margin-top: 20px;
+//         width: 100%;
+//         max-width: 400px;
+//         display: grid;
+//         gap: 10px;
+
+
+//         .map {
+//             min-height: 500px;
+//             width: 100%;
+//             background: gray;
+//         }
+//     }
+
+.location-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.location-form input,
+.summary-input {
+    // padding: 8px;
+    // width: 400px;
+    // max-width: 400px;
+    // border: 1px solid #ccc;
+    // border-radius: 4px;
+}
+
+.warning-text {
+    color: #e63946;
+    font-size: 14px;
+}
+
+.next-btn[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666;
+}
+
+.summary-input {
+    height: 90px;
+}
+
+.main-content.labels {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.main-content.labels-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+
+.stay-add-footer.initial-footer {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    text-align: center;
+
+    display: flex;
+    justify-content: end;
+}
+
+div.stay-add-footer-wrapper {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stay-add-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: white;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+
+    .back-btn {
+        position: relative;
+        right: 0.625rem;
+        height: max-content;
+        font-family: 'Airbnb Cereal VF', 'AirbnbCereal-med', -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
+        font-weight: 500 !important;
+        background: none;
+        border: none;
+        border-radius: 8px;
+        text-decoration: underline;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: rem(10px);
+    }
+
+    .back-btn:hover {
+        background-color: rgb(245, 243, 243);
+    }
+
+    .next-btn {
+        background: none;
+        border: none;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-inline: 32px;
+        background-color: black;
+        color: white;
+        border-radius: 8px;
+        font-family: 'Airbnb Cereal VF', 'AirbnbCereal-med', -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+
+    }
+}

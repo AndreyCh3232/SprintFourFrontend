@@ -1,0 +1,63 @@
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0.7rem 5rem;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    font-size: 0.875rem;
+    color: rgb(34, 34, 34);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+
+    p {
+
+        text-align: left;
+        margin: 0;
+        line-height: 1.125;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        width: inherit;
+
+        a {
+            color: #222222;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .footer-right {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-weight: 500;
+        width: inherit;
+        justify-content: end;
+
+        span {
+            cursor: default;
+            width: max-content;
+        }
+
+        .clickable {
+            color: #222222;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .dropdown {
+            cursor: pointer;
+        }
+    }
+}
